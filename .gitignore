@@ -1,0 +1,22 @@
+# Ignore compiled files
+*.class
+*.war
+*.jar
+*.ear
+*.zip
+*.tar.gz
+
+# Ignore temporary files
+*~
+*.swp
+*.log
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore environment-specific files
+.env
+
+# Ignore node_modules
+node_modules
