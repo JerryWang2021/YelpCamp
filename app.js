@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const methodOverride = require('method-override');
 const mongoose = require('mongoose');
+const ejsMate = require('ejs-mate');
 require('dotenv').config(); // load environment variable from .env file
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -11,6 +12,8 @@ const Campground = require('./models/campground');
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log('connected to MongoDB'))
     .catch(err => console.error('Could not connect to MongoDB...', err));
+
+app.engine('ejs', ejsMate);
 
 //Middewares
 app.set('view engine', 'ejs');
